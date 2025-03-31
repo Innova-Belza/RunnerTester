@@ -16,12 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: appending text to text.txt
-        run: echo 'Test' >> ./output/testfile.txt
-
-      # - name: move to dir # Move the generated files into output folder
-      #   run: |
-      #     mkdir -p output
-      #     yes| cp -rf testfile.txt ./output/
+        run: echo 'Test' >> version.txt
       
       - name: Commit files # commit the output folder
         run: |
