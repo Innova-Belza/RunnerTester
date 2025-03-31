@@ -2,8 +2,8 @@ import os
 
 type = ""
 with open('versiontype.txt', 'r') as file:
-    lines = file.read().splitlines()
-    if lines.count() > 0:
+    if len(file.readlines()) > 0:
+        lines = file.read().splitlines()
         type = lines[-1]
 
 
