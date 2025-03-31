@@ -9,5 +9,10 @@ with open('version.txt', 'a+') as file:
         file.seek(0)
     last_line = file.readline()
 
-    file.write("\n" + last_line)
+    last_line.replace("version=", "")
+    last_line = last_line.split(".")
+
+    last_line = last_line[0] + "." + last_line[1] + "." + (int(last_line[2]) + 1)
+
+    file.write("\nversion=" + last_line)
 
