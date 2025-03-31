@@ -9,6 +9,7 @@ open('versiontype.txt', 'w').close()
 
 with open('version.txt', 'a+') as file:
     last_line = "version=1.0.2"
+    file.seek(0)
     for line in file:
         last_line = line
 
