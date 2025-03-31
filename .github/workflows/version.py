@@ -9,5 +9,5 @@ with open('version.txt', 'a+') as file:
         file.seek(0)
     last_line = file.readline()
 
-    file.write(last_line)
+    file.write("\n" + last_line)
 
