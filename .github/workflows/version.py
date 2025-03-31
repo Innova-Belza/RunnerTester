@@ -2,25 +2,15 @@ import os
 
 type = ""
 with open('versiontype.txt', 'r') as file:
-    try:  # catch OSError in case of a one line file 
-        file.seek(-2, os.SEEK_END)
-        while file.read(1) != b'\n':
-            file.seek(-2, os.SEEK_CUR)
-    except OSError:
-        file.seek(0)
-    type = file.readline()
+    lines = file.read().splitlines()
+    type = lines[-1]
 
 
 open('versiontype.txt', 'w').close()
 
 with open('version.txt', 'a+') as file:
-    try:  # catch OSError in case of a one line file 
-        file.seek(-2, os.SEEK_END)
-        while file.read(1) != b'\n':
-            file.seek(-2, os.SEEK_CUR)
-    except OSError:
-        file.seek(0)
-    last_line = file.readline()
+    lines = file.read().splitlines()
+    last_line = lines[-1]
 
     last_line = last_line.replace("version=", "")
     last_line = last_line.split(".")
