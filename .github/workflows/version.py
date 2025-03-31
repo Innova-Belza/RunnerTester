@@ -8,7 +8,7 @@ with open('versiontype.txt', 'r') as file:
 open('versiontype.txt', 'w').close()
 
 with open('version.txt', 'a+') as file:
-    last_line = "version=1.0.2"
+    last_line = ""
     file.seek(0)
     for line in file:
         last_line = line
@@ -17,7 +17,9 @@ with open('version.txt', 'a+') as file:
     last_line = last_line.split(".")
 
     type = type.lower();  
-    if type == "version":
+    if last_line == "":
+        last_line = "version=1.0.0"
+    elif type == "version":
         last_line = str(int(last_line[0]) + 1) + ".0.0"
     elif type == "major":
         last_line = last_line[0] + "." + str(int(last_line[1]) + 1) + ".0"
