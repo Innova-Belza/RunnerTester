@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: appending text to text.txt
-        run: echo 'Test' >> testsss.txt
+        run: echo 'Test' >> testfile.txt
 
       - name: move to dir # Move the generated files into output folder
         run: |
