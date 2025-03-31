@@ -20,8 +20,8 @@ jobs:
 
       - name: move to dir # Move the generated files into output folder
         run: |
-        mkdir -p output
-        yes| cp -rf testfile.txt ./output/
+          mkdir -p output
+          yes| cp -rf testfile.txt ./output/
       
       - name: Commit files # commit the output folder
         run: |
