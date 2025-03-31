@@ -2,16 +2,15 @@ import os
 
 type = ""
 with open('versiontype.txt', 'r') as file:
-    if len(file.readlines()) > 0:
-        lines = file.read().splitlines()
-        type = lines[-1]
-
+    for line in file:
+            type = line
 
 open('versiontype.txt', 'w').close()
 
 with open('version.txt', 'a+') as file:
-    lines = file.read().splitlines()
-    last_line = lines[-1]
+    last_line = "version=1.0.0"
+    for line in file:
+        last_line = line
 
     last_line = last_line.replace("version=", "")
     last_line = last_line.split(".")
