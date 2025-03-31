@@ -10,6 +10,9 @@ with open('versiontype.txt', 'r') as file:
         file.seek(0)
     type = file.readline()
 
+
+open('versiontype.txt', 'w').close()
+
 with open('version.txt', 'a+') as file:
     try:  # catch OSError in case of a one line file 
         file.seek(-2, os.SEEK_END)
