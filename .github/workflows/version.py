@@ -3,7 +3,8 @@ import os
 type = ""
 with open('versiontype.txt', 'r') as file:
     lines = file.read().splitlines()
-    type = lines[-1]
+    if lines.count() > 0:
+        type = lines[-1]
 
 
 open('versiontype.txt', 'w').close()
