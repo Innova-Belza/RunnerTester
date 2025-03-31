@@ -15,15 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: appending text to text.txt
-        run: echo 'Test' >> version.txt
+      - name: updating version
+        run: python ./.github/workflows/version.py
       
       - name: Commit files # commit the output folder
         run: |
-          git config --local user.email "test@github.com"
-          git config --local user.name "GitHub Action test"
+          git config --local user.email "version@github.com"
+          git config --local user.name "Auto version update"
           git add .
-          git commit -m "Add changes"
+          git commit -m "Version update"
 
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
