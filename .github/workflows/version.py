@@ -17,7 +17,7 @@ with open('version.txt', 'a+') as file:
     last_line = last_line.split(".")
 
     type = type.lower();  
-    if last_line == "":
+    if last_line == "\n":
         last_line = "version=1.0.0"
     elif type == "version":
         last_line = str(int(last_line[0]) + 1) + ".0.0"
