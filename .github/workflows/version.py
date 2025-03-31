@@ -7,7 +7,7 @@ with open('version.txt', 'w+') as file:
             file.seek(-2, os.SEEK_CUR)
     except OSError:
         file.seek(0)
-    last_line = file.readline().decode()
+    last_line = file.readline()
 
     file.write(last_line)
 
