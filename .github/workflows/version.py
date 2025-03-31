@@ -1,7 +1,7 @@
 import os
 
 type = ""
-with open('version.txt', 'r') as file:
+with open('versiontype.txt', 'r') as file:
     try:  # catch OSError in case of a one line file 
         file.seek(-2, os.SEEK_END)
         while file.read(1) != b'\n':
