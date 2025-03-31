@@ -14,7 +14,7 @@ with open('version.txt', 'a+') as file:
         last_line = line
 
     if last_line == "":
-            last_line = "version=1.0.0"
+        last_line = "1.0.0"
     else:
         last_line = last_line.replace("version=", "")
         last_line = last_line.split(".")
