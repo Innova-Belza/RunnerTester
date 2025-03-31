@@ -7,7 +7,7 @@ with open('versiontype.txt', 'r') as file:
 
 open('versiontype.txt', 'w').close()
 
-with open('version.txt', 'a+') as file:
+with open('versionhistory.txt', 'a+') as file:
     last_line = ""
     file.seek(0)
     for line in file:
@@ -29,4 +29,7 @@ with open('version.txt', 'a+') as file:
             last_line = last_line[0] + "." + last_line[1] + "." + str(int(last_line[2]) + 1)
 
     file.write("\nversion=" + last_line) 
+
+    version = open('version.txt', 'w')
+    version.write("version=" + last_line)
 
